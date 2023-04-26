@@ -4,16 +4,16 @@ let sub = document.querySelector('#sub')
 
 
 function startGame() {
-    console.log('Game is starting...')
-    h1.innerHTML = 'Game is starting'
+    console.log('The game is starting...')
+    h1.innerHTML = 'The game is starting...'
 }
 
-const person = {
-    greet: function greet(){
-        console.log('Rockin')
-        sub.innerHTML = ('Rockin')
-    }
-}
+// const person = {
+//     greet: function greet(){
+//         console.log('Rockin')
+//         sub.innerHTML = ('Rockin')
+//     }
+// }
 
-person.greet()
+// person.greet()
 startGameBtn.addEventListener('click', startGame);
