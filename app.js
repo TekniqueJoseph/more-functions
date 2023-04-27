@@ -29,5 +29,5 @@ startGameBtn.addEventListener('click', function() {
     const playerSelection = getPlayerChoice()
     console.log(playerSelection)
     h1.innerHTML = 'The game is starting...'
-    h2.innerHTML = playerSelection
+    h2.innerHTML = `${playerSelection} it is...`
 });
