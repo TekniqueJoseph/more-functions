@@ -11,21 +11,30 @@ body{
     top: 0;
     z-index:-10;
 }
-h1, h2{
+.gameBtn{
     text-align: center;
+    margin-top: 4rem;
 }
+
 #start-game-btn{
-    padding: 10px 25px;
-    background-color: black;
+    padding: 12px 28px;
+    background-color: transparent;
     color: aliceblue;
     font-size: 1.2rem;
     border-radius: 8px;
-    border: none;
+    border:1px solid black;
     transition: transform ease-in-out 0.5s;
+    
 }
 #start-game-btn:hover{
     cursor: pointer;
-    background-color: aliceblue;
+    border:1px solid aliceblue;
     color: black;
     transform: rotate(360deg);
+}
+.content{
+    margin-top: 5rem;
+}
+h1, h2{
+    text-align: center;
 }
