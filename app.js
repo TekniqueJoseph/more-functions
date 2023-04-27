@@ -61,7 +61,7 @@ startGameBtn.addEventListener('click', function() {
     const computerChoice = getComputerChoice()
     heading.innerHTML = 'The game is starting...'
     player.innerHTML = `You chose ${playerChoice}.`
-    computer.innerHTML = `The computer chose ${computerChoice}.`
+    computer.innerHTML = `The CPU chose ${computerChoice}.`
     const winner = getWinner(computerChoice, playerChoice)
     console.log(winner)
     champion.innerHTML = `The Result Is ${winner}!`
