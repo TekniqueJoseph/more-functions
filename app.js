@@ -1,5 +1,6 @@
 const startGameBtn = document.getElementById('start-game-btn');
 let h1 = document.querySelector('#heading');
+let h2 = document.querySelector('#sub');
 
 const ROCK = 'ROCK'
 const PAPER = 'PAPER'
@@ -9,7 +10,6 @@ let gameIsRunning = false;
 
 const getPlayerChoice = function () {
     const selection = prompt(`${ROCK} ${PAPER} or ${SCISSORS}`, '').toUpperCase()
-
     if ( selection !== ROCK &&
          selection !== PAPER &&
          selection !== SCISSORS
@@ -20,7 +20,6 @@ const getPlayerChoice = function () {
     return selection
 };
 
-
 startGameBtn.addEventListener('click', function() {
     if(gameIsRunning) {
         return
@@ -30,4 +29,5 @@ startGameBtn.addEventListener('click', function() {
     const playerSelection = getPlayerChoice()
     console.log(playerSelection)
     h1.innerHTML = 'The game is starting...'
+    h2.innerHTML = playerSelection
 });

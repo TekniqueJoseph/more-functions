@@ -11,6 +11,9 @@ body{
     top: 0;
     z-index:-10;
 }
-h1{
+h1, h2{
     text-align: center;
+}
+#start-game-btn{
+    padding: 10px 25px;
 }
