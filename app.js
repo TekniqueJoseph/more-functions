@@ -65,8 +65,6 @@ const clear = () => {
 }
 
 startGameBtn.addEventListener('click', () => {
-    // clear()
-    heading.innerHTML = 'Hello'
     if(gameIsRunning) {
         return
     }
