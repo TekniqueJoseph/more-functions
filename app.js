@@ -116,4 +116,4 @@ const subtractUp = function(...numbers) {
 
 console.log(sumUp(1,5,10,-3,6,10))
 console.log(sumUp(1,5,10,-3,6,10, 25, 88))
-console.log(subtractUp(1,10,15,20))
+console.log(subtractUp(1,10,15,21))
