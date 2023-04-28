@@ -13,7 +13,7 @@ const RESULT_PLAYER_WINS = 'PLAYER_WINS';
 const RESULT_COMPUTER_WINS = 'COMPUTER_WINS';
 let gameIsRunning = false;
 
-const getPlayerChoice = function () {
+const getPlayerChoice = () => {
     const selection = prompt(`${ROCK} ${PAPER} or ${SCISSORS}`, '').toUpperCase()
     if ( selection !== ROCK &&
          selection !== PAPER &&
@@ -25,7 +25,7 @@ const getPlayerChoice = function () {
     return selection
 };
 
-const getComputerChoice = function() {
+const getComputerChoice = () => {
     const randomValue = Math.random();
     if (randomValue < 0.34) {
         return ROCK;
@@ -57,8 +57,16 @@ const getWinner = (cChoice, pChoice) =>
     //     return RESULT_COMPUTER_WINS
     // }
 
+const clear = () => {
+    return heading.innerHTML = 'Hello'
+    // player.innerHTML = ''
+    // computer.innerHTML = ''
+    // champion.innerHTML = ''
+}
 
-startGameBtn.addEventListener('click', function() {
+startGameBtn.addEventListener('click', () => {
+    // clear()
+    heading.innerHTML = 'Hello'
     if(gameIsRunning) {
         return
     }
@@ -70,6 +78,15 @@ startGameBtn.addEventListener('click', function() {
     player.innerHTML = `You chose ${playerChoice}.`
     computer.innerHTML = `The CPU chose ${computerChoice}.`
     const winner = getWinner(computerChoice, playerChoice)
-    console.log(winner)
     champion.innerHTML = `The Result Is ${winner}!`
+    let message = `You picked ${playerChoice}, the CPU picked ${computerChoice}. The result is`
+    if (winner === RESULT_DRAW) {
+        message = message + ' a draw.';
+    } else if (winner === RESULT_PLAYER_WINS) {
+        message = message + ' You won!';
+    } else {
+        message = message + ' The CPU won.'
+    }
+    alert(message)
+    gameIsRunning = false;
 });
