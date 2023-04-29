@@ -31,6 +31,7 @@ body{
     border:1px solid aliceblue;
     color: black;
     transform: rotate(360deg);
+    box-shadow: 1px 1px 4px 4px mediumspringgreen;
 }
 .content{
     margin-top: 5rem;
