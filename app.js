@@ -113,7 +113,6 @@ const subtractUp = function(...numbers) {
     console.log(numbers)
     for (const num of arguments) {
         sum -= num
-        
     }
     return sum
 
