@@ -99,6 +99,9 @@ startGameBtn.addEventListener('click', () => {
 
 const sumUp = (a,b,...numbers) => {
     let sum = 0;
+    console.log('a',a)
+    console.log('b',b)
+    console.log('the rest', numbers)
     for (const num of numbers) {
         sum += num
     }
@@ -107,8 +110,10 @@ const sumUp = (a,b,...numbers) => {
 
 const subtractUp = function(...numbers) {
     let sum = 0;
+    console.log(numbers)
     for (const num of arguments) {
         sum -= num
+        
     }
     return sum
 
