@@ -122,19 +122,41 @@ const subtractUp = function(...numbers) {
 
 }
 
-console.log(sumUp(1,5,'dfd' ,-3,6,10))
-console.log(sumUp(1,5,10,-3,6,10, 25, 88))
-console.log(subtractUp(1,10,15,21))
+// console.log(sumUp(1,5,'dfd' ,-3,6,10))
+// console.log(sumUp(1,5,10,-3,6,10, 25, 88))
+// console.log(subtractUp(1,10,15,21))
 
-// callback function
-function greeting(name) {
-    console.log(`Hello, ${name}`);
-  }
+// callback function example
+// function greeting(name) {
+//     console.log(`Hello, ${name}`);
+//   }
   
-  function processUserInput(callback) {
-    const name = prompt("Please enter your name.");
-    callback(name);
-  }
+//   function processUserInput(callback) {
+//     const name = prompt("Please enter your name.");
+//     callback(name);
+//   }
   
-  processUserInput(greeting);
+//   processUserInput(greeting);
+
+  //callback function example
+  const sumUp2 = (cb,...numbers) => {
+    console.log(cb, numbers)
+    const validateNumber = (number) => {
+        return isNaN(number) ? 1 : number;
+    }; 
+    let sum = 0;
+    // console.log('the rest', numbers)
+    for (const num of numbers) {
+        sum += validateNumber(num)
+    }
+    cb(sum);
+}
+
+const showResult = (result) => {
+    alert(`the reslt after adding the numbers is ${result}`)
+};
+
+
+sumUp2(showResult, 1,5,'dfd' ,-3,6,10)
+// sumUp2(showResult, 1,5,10,-3,6,10, 25, 88)
   
