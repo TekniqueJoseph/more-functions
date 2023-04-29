@@ -96,7 +96,7 @@ startGameBtn.addEventListener('click', () => {
 });
 
 // not related to game
-
+// rest operator
 const sumUp = (a,b,...numbers) => {
     const validateNumber = (number) => {
         return isNaN(number) ? 1 : number;
@@ -125,3 +125,16 @@ const subtractUp = function(...numbers) {
 console.log(sumUp(1,5,'dfd' ,-3,6,10))
 console.log(sumUp(1,5,10,-3,6,10, 25, 88))
 console.log(subtractUp(1,10,15,21))
+
+// callback function
+function greeting(name) {
+    console.log(`Hello, ${name}`);
+  }
+  
+  function processUserInput(callback) {
+    const name = prompt("Please enter your name.");
+    callback(name);
+  }
+  
+  processUserInput(greeting);
+  
