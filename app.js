@@ -112,15 +112,13 @@ const sumUp = (a,b,...numbers) => {
     return sum
 }
 
-const subtractUp = function(...numbers) {
-    let sum = 0;
-    console.log(numbers)
-    for (const num of arguments) {
-        sum -= num
-    }
-    return sum
-
-}
+// const subtractUp = function() {
+//     let sum = 0;
+//     for (const num of arguments) {
+//         sum -= num
+//     }
+//     return sum
+// }
 
 // console.log(sumUp(1,5,'dfd' ,-3,6,10))
 // console.log(sumUp(1,5,10,-3,6,10, 25, 88))
@@ -140,9 +138,9 @@ const subtractUp = function(...numbers) {
 
   //callback function example
   const sumUp2 = (cb,...numbers) => {
-    console.log(cb, numbers)
+    // console.log(cb, numbers)
     const validateNumber = (number) => {
-        return isNaN(number) ? 1 : number;
+        return isNaN(number) ? 0 : number;
     }; 
     let sum = 0;
     // console.log('the rest', numbers)
@@ -152,11 +150,20 @@ const subtractUp = function(...numbers) {
     cb(sum);
 }
 
+const subtractUp = function(cb,...numbers) {
+    let sum = 0;
+    for (const num of numbers) {
+        sum -= num
+    }
+    cb(sum)
+}
+
 const showResult = (result) => {
     alert(`the reslt after adding the numbers is ${result}`)
 };
 
 
 sumUp2(showResult, 1,5,'dfd' ,-3,6,10)
-// sumUp2(showResult, 1,5,10,-3,6,10, 25, 88)
+sumUp2(showResult, 1,5,10,-3,6,10, 25, 88)
+subtractUp(showResult,1,10,15,21)
   
