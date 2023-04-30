@@ -138,12 +138,10 @@ const sumUp = (a,b,...numbers) => {
 
   //callback function example
   const combine = (cb, operation,...numbers) => {
-    // console.log(cb, numbers)
     const validateNumber = (number) => {
         return isNaN(number) ? 0 : number;
     }; 
     let sum = 0;
-    // console.log('the rest', numbers)
     for (const num of numbers) {
         if (operation === 'ADD') {
             sum += validateNumber(num)
@@ -153,7 +151,6 @@ const sumUp = (a,b,...numbers) => {
     }
     cb(sum);
 }
-
 // const subtractUp = function(cb,...numbers) {
 //     let sum = 0;
 //     for (const num of numbers) {
