@@ -168,3 +168,16 @@ const showResult = ( messageText,result) => {
 // combine(showResult.bind(this, 'The + is:'), 'ADD', 1,5,10,-3,6,10,25,88)
 // combine(showResult.bind(this, 'The - is:'), 'SUBTRACT', 1,10,15,20)
   
+const myObject = {
+    name: 'test',
+    print: function() {
+        console.log(`My name is: ${this.name}`)
+    }
+}
+
+const myOtherObject = {
+    name: 'another',
+}
+
+let output = myObject.print.bind(myOtherObject)
+output()
