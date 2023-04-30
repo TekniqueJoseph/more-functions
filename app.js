@@ -167,7 +167,7 @@ const showResult = ( messageText,result) => {
 // combine(showResult.bind(this, 'The + is:'), 'ADD', 1,5,'dfd' ,-3,6,10)
 // combine(showResult.bind(this, 'The + is:'), 'ADD', 1,5,10,-3,6,10,25,88)
 // combine(showResult.bind(this, 'The - is:'), 'SUBTRACT', 1,10,15,20)
-  
+// bind example 1
 const myObject = {
     name: 'test',
     print: function() {
@@ -182,4 +182,21 @@ const myOtherObject = {
 let output = myObject.print.bind(myOtherObject)
 output()
 
-let car = {}
+// bind example 2
+let car = {
+    name: 'car',
+    run: function(speed) {
+        console.log(`${this.name} is moving at ${speed} mph.`)
+    } 
+};
+
+let airplane = {
+    name: 'airplane',
+    fly: function(speed) {
+        console.log(`${this.name} is flying at ${speed} mph.`)
+    }
+}
+
+const method = car.run
+const newRun = method.bind(airplane, 20)
+newRun()
