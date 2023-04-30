@@ -137,7 +137,7 @@ const sumUp = (a,b,...numbers) => {
 //   processUserInput(greeting);
 
   //callback function example
-  const sumUp2 = (cb,...numbers) => {
+  const combine = (cb, operation,...numbers) => {
     // console.log(cb, numbers)
     const validateNumber = (number) => {
         return isNaN(number) ? 0 : number;
@@ -145,25 +145,29 @@ const sumUp = (a,b,...numbers) => {
     let sum = 0;
     // console.log('the rest', numbers)
     for (const num of numbers) {
-        sum += validateNumber(num)
+        if (operation === 'ADD') {
+            sum += validateNumber(num)
+        } else {
+            sum -= validateNumber(num)
+        }
     }
     cb(sum);
 }
 
-const subtractUp = function(cb,...numbers) {
-    let sum = 0;
-    for (const num of numbers) {
-        sum -= num
-    }
-    cb(sum)
-}
+// const subtractUp = function(cb,...numbers) {
+//     let sum = 0;
+//     for (const num of numbers) {
+//         sum -= num
+//     }
+//     cb(sum, 'The - result is')
+// }
 
-const showResult = (result) => {
-    alert(`the reslt after adding the numbers is ${result}`)
+const showResult = ( messageText,result) => {
+    alert(`${messageText} ${result}`)
 };
 
 
-sumUp2(showResult, 1,5,'dfd' ,-3,6,10)
-sumUp2(showResult, 1,5,10,-3,6,10, 25, 88)
-subtractUp(showResult,1,10,15,21)
+combine(showResult.bind(this, 'The + is:'), 'ADD', 1,5,'dfd' ,-3,6,10)
+combine(showResult.bind(this, 'The + is:'), 'ADD', 1,5,10,-3,6,10,25,88)
+combine(showResult.bind(this, 'The - is:'), 'SUBTRACT', 1,10,15,20)
   
