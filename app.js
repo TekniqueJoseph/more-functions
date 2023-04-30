@@ -181,3 +181,5 @@ const myOtherObject = {
 
 let output = myObject.print.bind(myOtherObject)
 output()
+
+let car = {}
